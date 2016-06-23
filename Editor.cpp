@@ -96,6 +96,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
     GetTextMetrics(hdc, &tm);
     cxChar = tm.tmAveCharWidth;
     cyChar = tm.tmHeight;
+    cxClient = LOWORD(lParam);
+    cyClient = HIWORD(lParam);
     SetMenu(hwnd, hMenu);
     CreateCaret(hwnd, NULL, 1, cyChar);
     ShowCaret(hwnd);
